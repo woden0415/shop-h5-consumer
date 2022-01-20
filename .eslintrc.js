@@ -66,8 +66,8 @@ module.exports = {
     'vue/no-multiple-template-root': 'off',
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': [ 'error' ],
-    'import/no-extraneous-dependencies': [ 'error', { devDependencies: true } ]
-
+    'import/no-extraneous-dependencies': [ 'error', { devDependencies: true } ],
+    'prefer-default-export': false
   }
 
 }

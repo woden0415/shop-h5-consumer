@@ -1,12 +1,10 @@
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'
-// import LayoutFrame from "../components/layout-frame.vue"
-
-import { useRouter } from 'vue-router'
 // 闪屏广告页面
+import { defineComponent, reactive, toRefs } from 'vue'
+import { useRouter } from 'vue-router'
+
 export default defineComponent({
   name: 'FlashPage',
-  // components: {LayoutFrame},
   setup() {
     const router = useRouter()
     const state = reactive({
@@ -43,13 +41,10 @@ export default defineComponent({
 layout-frame()
   template(#body)
     div.page-center_wrapper()
-      h1 闪屏页面
-      h2 {{time}}
-      button(@click="goToMain") 手动跳过
-      button(@click="goToLogin") 登录页面
-      button(@click="show=!show") 切换hello
-      transition(name="slide-fade")
-        p(v-show="show") hello
+      div.btn-skip_wrapper(@click="goToMain") {{time}} 跳过
+      div.slogan-title_wrapper
+        div.slogan-title_text NET-A-PORTER
+        div.slogan-title_text MR PORTTER
 </template>
 
 <style lang="less">
@@ -60,11 +55,31 @@ layout-frame()
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: @bgColor;
-
+  background-color: @bgDarkColor;
+  position: relative;
 }
-
-p {
-  font-size: 16px;
+.btn-skip_wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: @white;
+  border: 1px solid @white;
+  border-radius: 10px;
+  font-size: 14px;
+  width: 55px;
+  text-align: center;
+  line-height: 1.7;
+}
+.slogan-title_wrapper {
+  font-size: 20px;
+  color: @textDarkColor;
+  text-align: center;
+  line-height: 2;
+  letter-spacing: 2px;
+}
+.slogan-title_text {
+  &:first-child {
+    border-bottom: 1px solid @white;
+  }
 }
 </style>
