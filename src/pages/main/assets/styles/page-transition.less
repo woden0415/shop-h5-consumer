@@ -1,0 +1,52 @@
+// 'slide-left' 从右向左滑动
+.slide-left-enter-from {
+  transform: translateX(100%);
+}
+.slide-left-enter-active {
+  transition: transform 0.3s ease-out;
+}
+.slide-left-enter-to {}
+
+.slide-left-leave-from {
+  transform: translateX(0);
+}
+.slide-left-leave-active {
+  // transition: transform 0.3s ease-out;
+}
+.slide-left-leave-to {
+  // transform: translateX(100%);
+}
+
+
+
+// 'pop-up' 从下往上弹出
+.pop-up-enter-from {
+  transform: translateY(100%);
+}
+.pop-up-enter-active {
+  transition: all 0.25 ease-out;
+}
+.pop-up-enter-to {}
+
+.pop-up-leave-from {}
+.pop-up-leave-active {
+  transition: all 5s ease-out;
+}
+.pop-up-leave-to {
+  transform: translateX(100%);
+}
+
+// gradual-fade
+.gradual-fade-enter-from {}
+.gradual-fade-enter-active {}
+.gradual-fade-enter-to {}
+
+.gradual-fade-leave-from {
+  opacity:1;
+}
+.gradual-fade-leave-active {
+  transition: opacity 0.15s ease-out;
+}
+.gradual-fade-leave-to {
+  opacity:0;
+}

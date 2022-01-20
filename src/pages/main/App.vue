@@ -1,15 +1,19 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 export default defineComponent({
-  setup(){  
-  }
+  name: 'App',
+  setup(){
+    
+   }
 })
 </script>
 
 <template lang="pug">
-div() main内容
+router-view(v-slot="{ Component, route  }")
+  transition(:name="route.meta.transition" mode="out-in")
+    component(:is="Component")
 </template>
 
-<style>
-
+<style lang="less">
+@import "./assets/styles/page-transition.less";
 </style>
