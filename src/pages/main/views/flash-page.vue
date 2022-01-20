@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from "vue";
+import { defineComponent, reactive, toRefs } from 'vue'
 // import LayoutFrame from "../components/layout-frame.vue"
 
 import { useRouter } from 'vue-router'
@@ -7,41 +7,42 @@ import { useRouter } from 'vue-router'
 export default defineComponent({
   name: 'FlashPage',
   // components: {LayoutFrame},
-  setup(){
-    const router = useRouter();
+  setup() {
+    const router = useRouter()
     const state = reactive({
       time: 5,
       show: false
     })
+    let timer: any = null
 
     // 声明跳转到首页的方法
-    const goToMain = ()=>{
+    const goToMain = () => {
       clearInterval(timer)
-      router.push({name: 'main'})
+      router.push({ name: 'main' })
     }
 
     // 声明跳转到首页的方法
-    const goToLogin = ()=>{
-      router.push({name: 'login'})
+    const goToLogin = () => {
+      router.push({ name: 'login' })
     }
 
     // 定时器自动跳转
-    const timer = setInterval(()=>{
+    timer = setInterval(() => {
       state.time--
-      if(state.time<=0) {
+      if (state.time <= 0) {
         goToMain()
       }
     }, 1000)
 
-    return {...toRefs(state),goToMain,goToLogin}
+    return { ...toRefs(state), goToMain, goToLogin }
   }
 })
 </script>
 
 <template lang="pug">
 layout-frame()
-  template(#body) 
-    div.page-center_wrapper() 
+  template(#body)
+    div.page-center_wrapper()
       h1 闪屏页面
       h2 {{time}}
       button(@click="goToMain") 手动跳过
@@ -60,9 +61,8 @@ layout-frame()
   align-items: center;
   flex-direction: column;
   background-color: @bgColor;
-  
-}
 
+}
 
 p {
   font-size: 16px;

@@ -1,9 +1,10 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-  export default defineComponent({
-    name: 'LayoutFrame',
-    setup(){}
-  })
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'LayoutFrame',
+  setup() {}
+})
 </script>
 <template lang="pug">
 div.layout-frame_wrapper()

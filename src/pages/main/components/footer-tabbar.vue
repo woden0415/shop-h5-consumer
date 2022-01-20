@@ -1,11 +1,11 @@
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from "vue";
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   name: 'FooterTabbar',
-  setup(){
+  setup() {
     const state = reactive({
-      active: 0,
+      active: 0
     })
     return { ...toRefs(state) }
   }

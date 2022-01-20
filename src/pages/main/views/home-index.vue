@@ -1,17 +1,17 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import FooterTabbar from "../components/footer-tabbar.vue";
+import FooterTabbar from '../components/footer-tabbar.vue'
 
 export default defineComponent({
-  name: "HomeIndex",
+  name: 'HomeIndex',
   components: { FooterTabbar },
-  setup(){ }
+  setup() {}
 })
 </script>
 
 <template lang="pug">
 layout-frame
-  template(#header) 
+  template(#header)
     h1 顶部栏
   template(#body)
     div 主题内容
