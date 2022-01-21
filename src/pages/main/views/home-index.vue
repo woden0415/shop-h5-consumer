@@ -1,17 +1,16 @@
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'
+import { computed, defineComponent } from 'vue'
 import FooterTabbar from '../components/footer-tabbar.vue'
-import { tabbarName } from '../composables/homeIndex'
+import { useHomeIndexStore } from '../store/modules/homeIndex'
+import HeaderBase from '../components/header-base.vue'
 
-// @todo 共享菜单底部选项数据
 export default defineComponent({
   name: 'HomeIndex',
-  components: { FooterTabbar },
+  components: { FooterTabbar, HeaderBase },
   setup() {
-    const state = reactive({
-      currentTab: tabbarName.value
-    })
-    return {...toRefs(state)}
+    const { _getTabbarName } = useHomeIndexStore()
+    const currentTab = computed(() => _getTabbarName())
+    return { currentTab }
   }
 })
 </script>
@@ -19,9 +18,12 @@ export default defineComponent({
 <template lang="pug">
 layout-frame
   template(#header)
-    h1 顶部栏
+    header-base
+      template(#center) MR PORTER
   template(#body)
-    div 主题内容 {{currentTab}}
+    router-view(v-slot="{ Component, route  }")
+      transition(:name="route.meta.transition" mode="out-in")
+        component(:is="Component")
   template(#footer)
     footer-tabbar
 

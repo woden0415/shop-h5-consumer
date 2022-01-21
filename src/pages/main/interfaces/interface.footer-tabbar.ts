@@ -1,4 +1,4 @@
-export enum TypeTabbarEnum {
+enum TypeTabbarEnum {
   home = 'home',
   brand = 'brand',
   category = 'category',
@@ -6,3 +6,4 @@ export enum TypeTabbarEnum {
   mine = 'mine'
 }
 
+export default TypeTabbarEnum

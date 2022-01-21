@@ -8,8 +8,7 @@ export default defineComponent({
   setup() {
     const router = useRouter()
     const state = reactive({
-      time: 5,
-      show: false
+      time: 5
     })
     let timer: any = null
 

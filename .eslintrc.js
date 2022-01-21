@@ -1,5 +1,4 @@
 module.exports = {
-
   env: {
     browser: true,
     es2021: true
@@ -66,8 +65,6 @@ module.exports = {
     'vue/no-multiple-template-root': 'off',
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': [ 'error' ],
-    'import/no-extraneous-dependencies': [ 'error', { devDependencies: true } ],
-    'prefer-default-export': false
+    'import/no-extraneous-dependencies': [ 'error', { devDependencies: true } ]
   }
-
 }
