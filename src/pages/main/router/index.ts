@@ -24,37 +24,37 @@ const route = createRouter({
           path: '/',
           redirect: '/home',
           meta: { title: '首页', transition: 'gradual-fade' },
-          component: () => import('../views/home-index/tab-home.vue')
+          component: () => import('../views/home-index/tab/tab-home.vue')
         },
         {
           path: 'home',
           name: 'home',
           meta: { title: '首页', transition: 'gradual-fade' },
-          component: () => import('../views/home-index/tab-home.vue')
+          component: () => import('../views/home-index/tab/tab-home.vue')
         },
         {
           path: 'brand',
           name: 'brand',
           meta: { title: '品牌', transition: 'gradual-fade' },
-          component: () => import('../views/home-index/tab-brand.vue')
+          component: () => import('../views/home-index/tab/tab-brand.vue')
         },
         {
           path: 'category',
           name: 'category',
           meta: { title: '分类', transition: 'gradual-fade' },
-          component: () => import('../views/home-index/tab-category.vue')
+          component: () => import('../views/home-index/tab/tab-category.vue')
         },
         {
           path: 'magazine',
           name: 'magazine',
           meta: { title: '杂志', transition: 'gradual-fade' },
-          component: () => import('../views/home-index/tab-magazine.vue')
+          component: () => import('../views/home-index/tab/tab-magazine.vue')
         },
         {
           path: 'mine',
           name: 'mine',
           meta: { title: '我的', transition: 'gradual-fade' },
-          component: () => import('../views/home-index/tab-mine.vue')
+          component: () => import('../views/home-index/tab/tab-mine.vue')
         }
       ]
     },

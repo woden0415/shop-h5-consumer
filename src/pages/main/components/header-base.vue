@@ -23,6 +23,19 @@ div.header-basic_wrapper
   border-bottom: 4px solid #000;
   padding: 12px 0;
   margin: 0 14px;
+  border-top: 4px solid transparent;
+}
+.header-left_slot,
+.header-right_slot {
+  width: 80px;
+  display: flex;
+  flex-direction: row;
+}
+.header-left_slot {
+  flex-direction: start;
+}
+.header-right_slot {
+  justify-content: end;
 }
 .header-center_slot {
   flex: 1;

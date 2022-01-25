@@ -2,14 +2,16 @@
 import { computed, defineComponent } from 'vue'
 import FooterTabbar from '../components/footer-tabbar.vue'
 import { useHomeIndexStore } from '../store/modules/homeIndex'
-import HeaderBase from '../components/header-base.vue'
+import HeaderEntry from './home-index/header/header-entry.vue'
 
 export default defineComponent({
   name: 'HomeIndex',
-  components: { FooterTabbar, HeaderBase },
+  components: { FooterTabbar, HeaderEntry },
   setup() {
     const { _getTabbarName } = useHomeIndexStore()
     const currentTab = computed(() => _getTabbarName())
+    console.log('currentTab :>> ', currentTab)
+
     return { currentTab }
   }
 })
@@ -18,8 +20,7 @@ export default defineComponent({
 <template lang="pug">
 layout-frame
   template(#header)
-    header-base
-      template(#center) MR PORTER
+    header-entry
   template(#body)
     router-view(v-slot="{ Component, route  }")
       transition(:name="route.meta.transition" mode="out-in")
