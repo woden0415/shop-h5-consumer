@@ -14,6 +14,6 @@ header-base
   template(#center)
     span NET-A-PORTER
   template(#right)
-    span 搜索
+    span.m-r-10 搜索
     span 购物车
 </template>

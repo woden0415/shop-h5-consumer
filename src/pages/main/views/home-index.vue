@@ -1,12 +1,13 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import FooterTabbar from '../components/footer-tabbar.vue'
 import { useHomeIndexStore } from '../store/modules/homeIndex'
+import FooterTabbar from '../components/footer-tabbar.vue'
 import HeaderEntry from './home-index/header/header-entry.vue'
+import TabEntry from './home-index/tab/tab-entry.vue'
 
 export default defineComponent({
   name: 'HomeIndex',
-  components: { FooterTabbar, HeaderEntry },
+  components: { FooterTabbar, HeaderEntry, TabEntry },
   setup() {
     const { _getTabbarName } = useHomeIndexStore()
     const currentTab = computed(() => _getTabbarName())
@@ -22,9 +23,7 @@ layout-frame
   template(#header)
     header-entry
   template(#body)
-    router-view(v-slot="{ Component, route  }")
-      transition(:name="route.meta.transition" mode="out-in")
-        component(:is="Component")
+    tab-entry
   template(#footer)
     footer-tabbar
 
