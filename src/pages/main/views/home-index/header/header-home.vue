@@ -4,10 +4,14 @@
 import HeaderBase from '@/pages/main/components/header-base.vue'
 import TypeSex, { useRoleStore } from '@/pages/main/store/modules/role'
 import ToggleRole from '@/pages/main/components/toggle-role.vue'
+import SearchEntry from '@/pages/main/components/search-entry.vue'
+import ShopcarEntry from '@/pages/main/components/shopcar-entry.vue'
 
 export default defineComponent({
   name: 'HeaderHome',
-  components: { HeaderBase, ToggleRole },
+  components: {
+    HeaderBase, ToggleRole, SearchEntry, ShopcarEntry
+  },
   setup() {
     const { _getRole } = useRoleStore()
     const state = reactive({
@@ -29,6 +33,6 @@ header-base
   template(#center)
     span {{title}}
   template(#right)
-    span.m-r-10 搜索
-    span 购物车
+    search-entry.m-r-10
+    ShopcarEntry
 </template>

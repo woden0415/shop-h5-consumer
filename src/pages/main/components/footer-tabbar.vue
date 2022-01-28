@@ -1,5 +1,7 @@
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import {
+  defineComponent, reactive, toRefs, watchEffect
+} from 'vue'
 import TypeTabbarEnum from '../interfaces/interface.footer-tabbar'
 import { useHomeIndexStore } from '../store/modules/homeIndex'
 
@@ -7,11 +9,16 @@ export default defineComponent({
   name: 'FooterTabbar',
   setup() {
     const { _getTabbarName, _setTabbarName } = useHomeIndexStore()
-    const currentTab = computed(() => _getTabbarName())
+    const state = reactive({
+      currentTab: _getTabbarName()
+    })
+    watchEffect(() => {
+      state.currentTab = _getTabbarName()
+    })
     const onChange = (index: TypeTabbarEnum) => {
       _setTabbarName(index)
     }
-    return { currentTab, onChange }
+    return { ...toRefs(state), onChange }
   }
 })
 </script>

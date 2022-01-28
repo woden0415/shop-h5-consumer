@@ -1,12 +1,11 @@
 <script lang="ts">
 // 闪屏广告页面
 import { defineComponent, reactive, toRefs } from 'vue'
-import { useRouter } from 'vue-router'
+import pageRouter from '../../router/navigator'
 
 export default defineComponent({
   name: 'FlashPage',
   setup() {
-    const router = useRouter()
     const state = reactive({
       time: 5
     })
@@ -15,12 +14,12 @@ export default defineComponent({
     // 声明跳转到首页的方法
     const goToMain = () => {
       clearInterval(timer)
-      router.push({ name: 'main' })
+      pageRouter.push({ name: 'main' })
     }
 
     // 声明跳转到首页的方法
     const goToLogin = () => {
-      router.push({ name: 'login' })
+      pageRouter.push({ name: 'login' })
     }
 
     // 定时器自动跳转

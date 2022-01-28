@@ -5,10 +5,11 @@ import {
 import HeaderBase from '@/pages/main/components/header-base.vue'
 import TypeSex, { useRoleStore } from '@/pages/main/store/modules/role'
 import ToggleRole from '@/pages/main/components/toggle-role.vue'
+import ShopcarEntry from '@/pages/main/components/shopcar-entry.vue'
 
 export default defineComponent({
   name: 'HeaderMagazine',
-  components: { HeaderBase, ToggleRole },
+  components: { HeaderBase, ToggleRole, ShopcarEntry },
   setup() {
     const { _getRole } = useRoleStore()
     const state = reactive({
@@ -29,5 +30,5 @@ header-base
   template(#center)
     span {{title}}
   template(#right)
-    span 购物车
+    ShopcarEntry
 </template>
