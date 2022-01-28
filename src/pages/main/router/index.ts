@@ -17,13 +17,13 @@ const route = createRouter({
     {
       path: '/main',
       name: 'main',
-      meta: { title: '主页', transition: 'gradual-fade' },
+      meta: { title: '主页' },
       component: () => import('../views/home-index/index.vue')
     },
     {
       path: '/login',
       name: 'login',
-      meta: { title: '登录', transition: 'gradual-fade' },
+      meta: { title: '登录' },
       component: () => import('../views/my-login/index.vue')
     },
     {
@@ -37,6 +37,12 @@ const route = createRouter({
       name: 'search',
       meta: { title: '搜索' },
       component: () => import('../views/search-page/index.vue')
+    },
+    {
+      path: '/like',
+      name: 'like',
+      meta: { title: '心愿单' },
+      component: () => import('../views/goods-like/index.vue')
     }
   ]
 })

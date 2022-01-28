@@ -1,6 +1,5 @@
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import { useHomeIndexStore } from '../../store/modules/homeIndex'
+import { defineComponent } from 'vue'
 import FooterTabbar from '../../components/footer-tabbar.vue'
 import HeaderEntry from './header/header-entry.vue'
 import TabEntry from './tab/tab-entry.vue'
@@ -8,13 +7,7 @@ import TabEntry from './tab/tab-entry.vue'
 export default defineComponent({
   name: 'HomeIndex',
   components: { FooterTabbar, HeaderEntry, TabEntry },
-  setup() {
-    const { _getTabbarName } = useHomeIndexStore()
-    const currentTab = computed(() => _getTabbarName())
-    console.log('currentTab :>> ', currentTab)
-
-    return { currentTab }
-  }
+  setup() {}
 })
 </script>
 

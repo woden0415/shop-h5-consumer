@@ -2,14 +2,12 @@
 import { defineComponent } from 'vue'
 import HeaderBase from '../../components/header-base.vue'
 import PageBack from '../../components/page-back.vue'
-import LikeEntry from '../../components/like-entry.vue'
+import ShopcarEntry from '../../components/shopcar-entry.vue'
 
 export default defineComponent({
-  name: 'ShopCar',
-  components: {
-    HeaderBase, PageBack, LikeEntry
-  },
-  setup() {}
+  name: 'GoodsLike',
+  setup() { },
+  components: { HeaderBase, PageBack, ShopcarEntry }
 })
 </script>
 
@@ -18,9 +16,9 @@ header-base
   template(#left)
     PageBack
   template(#center)
-    span() 购物袋
+    span() 心愿单
   template(#right)
-    LikeEntry
+    ShopcarEntry
 </template>
 
 <style lang="less" scoped></style>
