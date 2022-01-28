@@ -1,9 +1,11 @@
 <script lang="ts">import { defineComponent } from 'vue'
 import HeaderBase from '@/pages/main/components/header-base.vue'
+import SearchEntry from '@/pages/main/components/search-entry.vue'
+import ShopcarEntry from '@/pages/main/components/shopcar-entry.vue'
 
 export default defineComponent({
   name: 'HeaderCategory',
-  components: { HeaderBase }
+  components: { HeaderBase, SearchEntry, ShopcarEntry }
 })
 </script>
 
@@ -12,6 +14,6 @@ header-base
   template(#center)
     span 分类
   template(#right)
-    span.m-r-10 搜索
-    span 购物车
+    search-entry.m-r-10
+    ShopcarEntry
 </template>

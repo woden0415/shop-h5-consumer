@@ -1,9 +1,9 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { useHomeIndexStore } from '../store/modules/homeIndex'
-import FooterTabbar from '../components/footer-tabbar.vue'
-import HeaderEntry from './home-index/header/header-entry.vue'
-import TabEntry from './home-index/tab/tab-entry.vue'
+import { useHomeIndexStore } from '../../store/modules/homeIndex'
+import FooterTabbar from '../../components/footer-tabbar.vue'
+import HeaderEntry from './header/header-entry.vue'
+import TabEntry from './tab/tab-entry.vue'
 
 export default defineComponent({
   name: 'HomeIndex',

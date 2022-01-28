@@ -1,9 +1,10 @@
 <script lang="ts">import { defineComponent } from 'vue'
 import HeaderBase from '@/pages/main/components/header-base.vue'
+import ShopcarEntry from '@/pages/main/components/shopcar-entry.vue'
 
 export default defineComponent({
   name: 'HeaderMagazine',
-  components: { HeaderBase }
+  components: { HeaderBase, ShopcarEntry }
 })
 </script>
 
@@ -14,5 +15,5 @@ header-base
   template(#center)
     span 杂志
   template(#right)
-    span 购物车
+    ShopcarEntry
 </template>
