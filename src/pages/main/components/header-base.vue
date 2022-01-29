@@ -18,6 +18,7 @@ div.header-basic_wrapper
 
 <style lang="less" scoped>
 .header-basic_wrapper {
+  position: relative;
   display: flex;
   flex-direction: row;
   border-bottom: 4px solid #000;
@@ -27,7 +28,6 @@ div.header-basic_wrapper
 }
 .header-left_slot,
 .header-right_slot {
-  width: 80px;
   display: flex;
   flex-direction: row;
 }
